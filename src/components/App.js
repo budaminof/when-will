@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
+import Head from './head/head';
 import FacebookLogin from 'react-facebook-login';
-import logo from './logo.svg';
-import './App.css';
 
 class App extends Component {
 
@@ -13,14 +12,10 @@ class App extends Component {
 
     return (
       <div className="App">
-
-        <div className="App-header">
-          <img src={ logo } className="App-logo" alt="logo" />
-        </div>
-
+        <Head />
         <FacebookLogin
           appId="110384006332451"
-          autoLoad={ true }
+          autoLoad={ false }
           fields="name,email,picture"
           callback={ responseFacebook }
           cssClass="fb-button"
