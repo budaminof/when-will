@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import Head from './head/head';
 import FacebookLogin from 'react-facebook-login';
+import { connect } from 'react-redux';
+import { login } from '../actions';
 
 class App extends Component {
 
   render() {
 
     const responseFacebook = (response) => {
-      console.log(response);
+      return this.props.login(response);
     }
 
     return (
@@ -22,10 +24,9 @@ class App extends Component {
           icon="fa-facebook"
           textButton=" LogIn"
         />
-
       </div>
     );
   }
 }
 
-export default App;
+export default connect(null, {login})(App);

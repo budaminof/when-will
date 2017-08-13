@@ -7,5 +7,5 @@ export default function (values, callback) {
     //                         });
     const request = values;
 
-    return {type: CREATE_TODO, payload: request};
+    return {type: LOGIN, payload: request};
 };
